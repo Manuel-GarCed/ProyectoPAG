@@ -19,7 +19,7 @@ public class UserDAO {
             
             if(connection!=null){
                 
-                String sql = "SELECT * FROM usuarios WHERE usuario= '"+user+"'AND contrasenha= '" +password+"'";
+                String sql = "SELECT * FROM usuarios WHERE usuario= '"+user+"'AND contrasenha= '" +password+"'";                                                        
                 
                 pst = connection.prepareStatement(sql);
                 pst.setString(1, user);

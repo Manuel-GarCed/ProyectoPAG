@@ -38,8 +38,8 @@ import model.UserDAO;
  */
 public class InterfazInicioSesionController implements Initializable {
 
-    private UserDAO model = new UserDAO();
-
+ private UserDAO model = new UserDAO();
+ 
     @FXML
     private VBox vboxprincipal;
     @FXML
@@ -63,85 +63,94 @@ public class InterfazInicioSesionController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void eventKey(KeyEvent event) {
         Object evt = event.getSource();
-        
-        if(evt.equals(textuser)){            
-            if(event.getCharacter().equals(" ")){
+
+        if (evt.equals(textuser)) {
+            if (event.getCharacter().equals(" ")) {
                 event.consume();
-            }            
-        }else if(evt.equals(textcontra)){
-            if(event.getCharacter().equals(" ")){
+            }
+        } else if (evt.equals(textcontra)) {
+            if (event.getCharacter().equals(" ")) {
                 event.consume();
-            }            
-        }
-        
-    }               
-
-
-    private void btninicioOnAction(ActionEvent e) {
-
-        if (!textuser.getText().isEmpty() == false && !textcontra.getText().isEmpty() == false) {
-            String user = textuser.getText();
-            String pass = textcontra.getText();
-
-            int state = model.login(user, pass);
+            }
         }
 
     }
 
-    private void loadStage(String url, Event event) {
+    @FXML
+    private void btninicioeventAction(ActionEvent event){
+        
+        Object evt = event.getSource();
 
+        if(evt.equals(btninicio)){
+                                
+            if(!textuser.getText().isEmpty() && !textcontra.getText().isEmpty()){
+            
+                String user = textuser.getText();
+                String pass = textcontra.getText();
+                
+                int state = model.login(user, pass);
+                
+                if(state!=-1){
+
+                    if(state == 1){
+
+                        JOptionPane.showMessageDialog(null, "Datos correctos puede ingresar al sistema");
+                        
+                        loadStage("/interfaz/PaginaHeroes.fxml", event);
+
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Error al iniciar sesión datos de acceso incorrectos", 
+                                                            "ADVERTENCIA", JOptionPane.WARNING_MESSAGE);                
+                    }
+
+                }                
+
+            
+            }else{            
+                    JOptionPane.showMessageDialog(null, "Error al iniciar sesión datos de acceso incorrectos", 
+                                                        "ADVERTENCIA", JOptionPane.WARNING_MESSAGE);                                
+            }
+        
+        }
+    
+    }
+    private void loadStage(String url, Event event){
+            
         try {
-
+    
             //((Node)(event.getSource())).getScene().getWindow().hide();    
-            Object eventSource = event.getSource();
-            Node sourceAsNode = (Node) eventSource;
+            
+            
+            Object eventSource = event.getSource(); 
+            Node sourceAsNode = (Node) eventSource ;
             Scene oldScene = sourceAsNode.getScene();
             Window window = oldScene.getWindow();
-            Stage stage = (Stage) window;
+            Stage stage = (Stage) window ;
             stage.hide();
-
+                        
             Parent root = FXMLLoader.load(getClass().getResource(url));
-            Scene scene = new Scene(root);
+            Scene scene = new Scene(root);              
             Stage newStage = new Stage();
             newStage.setScene(scene);
-            newStage.show();
-
+            newStage.show();  
+                                    
             newStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
                 @Override
                 public void handle(WindowEvent event) {
                     Platform.exit();
                 }
-            });
+            });  
 
         } catch (IOException ex) {
             Logger.getLogger(InterfazInicioSesionController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-    }
-
-
-    @FXML
-    private void eventAction(ActionEvent event) {
-        
-        Object evt = event.getSource();
-        
-        if(evt.equals(btninicio)){
-            if(!textuser.getText().isEmpty() && !textcontra.getText().isEmpty()){
                 
-                String user = textuser.getText();
-                String pass = textcontra.getText();
-                
-            }else{
-                JOptionPane.showMessageDialog(null, "Error al iniciar sesión, datos de acceso incorrectos", 
-                                                            "ADVERTENCIA", JOptionPane.WARNING_MESSAGE);
-            }
-        }
-        
-    }
-   
+    }    
+    
+    
 }

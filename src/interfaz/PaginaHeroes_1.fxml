@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="VboxHeroes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="607.0" snapToPixel="false" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PaginaHeroesController">
+   <children>
+      <Pane fx:id="PaneBusqueda" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+         <children>
+            <Label fx:id="labelHERO" layoutX="39.0" layoutY="23.0" prefHeight="17.0" prefWidth="101.0" text="HEROES" />
+            <TextField fx:id="TextFBusc" layoutX="39.0" layoutY="49.0" />
+            <Button fx:id="BtnBuscar" layoutX="217.0" layoutY="49.0" mnemonicParsing="false" text="Buscar" />
+            <Button fx:id="btneditar" layoutX="314.0" layoutY="49.0" mnemonicParsing="false" text="Editar" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </Pane>
+      <HBox fx:id="HboxHeroes" prefHeight="349.0" prefWidth="580.0" spacing="20.0">
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+         <children>
+            <ScrollPane fx:id="ScroballPag" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="345.0" prefWidth="599.0">
+               <content>
+                  <TilePane fx:id="TilePHeroes" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="540.0" prefWidth="567.0">
+                     <children>
+                        <ImageView fx:id="FlechaVerde" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/green.png" />
+                           </image>
+                           <TilePane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </TilePane.margin>
+                        </ImageView>
+                        <ImageView fx:id="Batman" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/batman%20(1).png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="Superman" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/superman.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="Spiderman" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/spiderman.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="Iroman" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/iroman.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="CapitanAmerica" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/capitan%20A.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="Constantine" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/capitan%20A.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="Deadpool" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/capitan%20A.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="ViudaNegra" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/capitan%20A.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="FLASH" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/capitan%20A.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="BRUJA_ESCARLATA" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/capitan%20A.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </TilePane>
+               </content>
+            </ScrollPane>
+         </children>
+      </HBox>
+   </children>
+</VBox>
