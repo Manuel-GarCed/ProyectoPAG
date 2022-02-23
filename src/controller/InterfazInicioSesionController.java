@@ -82,7 +82,7 @@ public class InterfazInicioSesionController implements Initializable {
     }
 
     @FXML
-    private void btninicioeventAction(ActionEvent event){
+    private void eventAction(ActionEvent event){
         
         Object evt = event.getSource();
 
