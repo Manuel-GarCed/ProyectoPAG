@@ -14,7 +14,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
 public class ConnectionPoolPostgres {
 
      private final String DB="ProyectoPAGHeroes";
-    private final String URL="jdbc:postgresql://localhost:3306/"+DB;
+    private final String URL="jdbc:postgresql://localhost:5432/"+DB;
     private final String USER="postgres";
     private final String PASS="123";
     
