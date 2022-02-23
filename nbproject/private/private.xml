@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/I3/Documents/GitHub/ProyectoPAG3/src/interfaz/InterfazEditar.fxml</file>
+            <file>file:/C:/Users/I3/Documents/GitHub/ProyectoPAG3/src/model/ConnectionPoolPostgres.java</file>
+            <file>file:/C:/Users/I3/Documents/GitHub/ProyectoPAG3/src/interfaz/PaginaHeroes.fxml</file>
+            <file>file:/C:/Users/I3/Documents/GitHub/ProyectoPAG3/src/controller/InterfazEditarController.java</file>
+            <file>file:/C:/Users/I3/Documents/GitHub/ProyectoPAG3/src/controller/InterfazInicioSesionController.java</file>
+            <file>file:/C:/Users/I3/Documents/GitHub/ProyectoPAG3/src/controller/PaginaHeroesController.java</file>
+            <file>file:/C:/Users/I3/Documents/GitHub/ProyectoPAG3/src/interfaz/InterfazInicioSesion.fxml</file>
+            <file>file:/C:/Users/I3/Documents/GitHub/ProyectoPAG3/src/proyectopag/FramePrincipal.java</file>
+            <file>file:/C:/Users/I3/Documents/GitHub/ProyectoPAG3/src/model/UserDAO.java</file>
+        </group>
+    </open-files>
+</project-private>
