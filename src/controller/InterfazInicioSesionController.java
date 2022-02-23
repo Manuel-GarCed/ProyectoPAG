@@ -63,23 +63,24 @@ public class InterfazInicioSesionController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }
+    }    
 
     @FXML
     private void eventKey(KeyEvent event) {
         Object evt = event.getSource();
-
-        if (evt.equals(textuser)) {
-            if (event.getCharacter().equals(" ")) {
+        
+        if(evt.equals(textuser)){            
+            if(event.getCharacter().equals(" ")){
                 event.consume();
-            }
-        } else if (evt.equals(textcontra)) {
-            if (event.getCharacter().equals(" ")) {
+            }            
+        }else if(evt.equals(textcontra)){
+            if(event.getCharacter().equals(" ")){
                 event.consume();
-            }
+            }            
         }
+        
+    }               
 
-    }
 
     private void btninicioOnAction(ActionEvent e) {
 
@@ -123,4 +124,24 @@ public class InterfazInicioSesionController implements Initializable {
 
     }
 
+
+    @FXML
+    private void eventAction(ActionEvent event) {
+        
+        Object evt = event.getSource();
+        
+        if(evt.equals(btninicio)){
+            if(!textuser.getText().isEmpty() && !textcontra.getText().isEmpty()){
+                
+                String user = textuser.getText();
+                String pass = textcontra.getText();
+                
+            }else{
+                JOptionPane.showMessageDialog(null, "Error al iniciar sesión, datos de acceso incorrectos", 
+                                                            "ADVERTENCIA", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        
+    }
+   
 }
