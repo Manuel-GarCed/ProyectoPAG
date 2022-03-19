@@ -70,19 +70,19 @@
                               <Image url="@../Imagenes/capitan%20A.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="Constantine" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="QuickSilver" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Imagenes/capitan%20A.jpg" />
+                              <Image url="@../Imagenes/marvel-quicksilver.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="Deadpool" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="hulk" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Imagenes/capitan%20A.jpg" />
+                              <Image url="@../Imagenes/marvel-hulk.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="ViudaNegra" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="Mera" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Imagenes/capitan%20A.jpg" />
+                              <Image url="@../Imagenes/dc-mera.jpg" />
                            </image>
                         </ImageView>
                         <ImageView fx:id="FLASH" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
