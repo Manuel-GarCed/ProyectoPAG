@@ -6,6 +6,7 @@
 package Interface;
 
 import Datos.heroes;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,12 +15,12 @@ import java.util.List;
  */
 public interface DAOHeroe {
 
-    public void registrar(heroes hero) throws Exception;
+    public void guardar(heroes hero) throws Exception;
 
     public void modificar(heroes hero) throws Exception;
 
     public void eliminar(heroes hero) throws Exception;
 
-    public List<heroes> listar ()throws Exception;
-
+    public ArrayList CargarImagenes()throws Exception;
+    
 }

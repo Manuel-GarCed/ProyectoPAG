@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="529.0" prefWidth="457.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="controller.GuardarController">
+   <children>
+      <VBox fx:id="VboxBP" layoutX="10.0" layoutY="10.0" prefHeight="471.0" prefWidth="435.0">
+         <children>
+            <HBox fx:id="HBoxVB" alignment="CENTER" prefHeight="110.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="lblHDM1" text="HEROES DC-MARVEL" textFill="#0000007f">
+                     <font>
+                        <Font name="Cambria Bold" size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Pane prefHeight="60.0" prefWidth="435.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Pane layoutX="20.0" prefHeight="60.0" prefWidth="435.0" />
+               </children>
+            </Pane>
+            <VBox alignment="CENTER" prefHeight="458.0" prefWidth="335.0" styleClass="chosen-heroes-card" stylesheets="@../../../../Desktop/HeroesProy/src/Values/Style.css">
+               <children>
+                  <HBox prefHeight="51.0" prefWidth="335.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <children>
+                        <Label prefHeight="65.0" prefWidth="120.0" text="Heroe">
+                           <font>
+                              <Font name="Cambria" size="36.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <ImageView fx:id="Img" fitHeight="170.0" fitWidth="285.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" />
+                  <HBox alignment="CENTER" prefHeight="43.0" prefWidth="335.0">
+                     <children>
+                        <Label fx:id="lblN" prefHeight="44.0" prefWidth="143.0" text="Nombre:">
+                           <font>
+                              <Font name="Cambria" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtN" prefHeight="40.0" prefWidth="195.0" promptText="NOMBRE" styleClass="transparent" stylesheets="@../../../../Desktop/HeroesProy/src/Values/Style.css">
+                           <font>
+                              <Font name="Cambria" size="12.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="43.0" prefWidth="335.0">
+                     <children>
+                        <Label fx:id="lblAlt" prefHeight="44.0" prefWidth="143.0" text="Aterego:">
+                           <font>
+                              <Font name="Cambria" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtB11" prefHeight="40.0" prefWidth="195.0" promptText="ALTEREGO" styleClass="transparent" stylesheets="@../../../../Desktop/HeroesProy/src/Values/Style.css">
+                           <font>
+                              <Font name="Cambria" size="12.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="43.0" prefWidth="335.0">
+                     <children>
+                        <Label fx:id="lblPP" prefHeight="44.0" prefWidth="143.0" text="Primera publicación:">
+                           <font>
+                              <Font name="Cambria" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtB12" prefHeight="40.0" prefWidth="195.0" promptText="PRIMERA PUBLICACIÓN" styleClass="transparent" stylesheets="@../../../../Desktop/HeroesProy/src/Values/Style.css">
+                           <font>
+                              <Font name="Cambria" size="12.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="43.0" prefWidth="335.0">
+                     <children>
+                        <Label fx:id="lblP" prefHeight="44.0" prefWidth="143.0" text="Personajes:">
+                           <font>
+                              <Font name="Cambria" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtB14" prefHeight="40.0" prefWidth="195.0" promptText="PERSONAJES" styleClass="transparent" stylesheets="@../../../../Desktop/HeroesProy/src/Values/Style.css">
+                           <font>
+                              <Font name="Cambria" size="12.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="335.0">
+                     <children>
+                        <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#guardarBD" text="GUARDAR">
+                           <font>
+                              <Font name="Cambria" size="12.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnAgImg" mnemonicParsing="false" onAction="#AgregarImg" text="AGREGAR IMG">
+                           <font>
+                              <Font name="Cambria" size="12.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="120.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

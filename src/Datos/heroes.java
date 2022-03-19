@@ -16,16 +16,18 @@ public class heroes {
     private String alterEgo;
     private String primera_publicacion;
     private String personajes;
+    private byte [] imagen;
 
     public heroes() {
     }
 
-    public heroes(String id, String nombre, String alterEgo, String primera_publicacion, String personajes) {
+    public heroes(String id, String nombre, String alterEgo, String primera_publicacion, String personajes, byte[] imagen) {
         this.id = id;
         this.nombre = nombre;
         this.alterEgo = alterEgo;
         this.primera_publicacion = primera_publicacion;
         this.personajes = personajes;
+        this.imagen = imagen;
     }
 
     public String getId() {
@@ -68,12 +70,18 @@ public class heroes {
         this.personajes = personajes;
     }
 
-    
+    public byte[] getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(byte[] imagen) {
+        this.imagen = imagen;
+    }
 
     @Override
     public String toString() {
-        return this.id + " - " + this.nombre + " - " + this.alterEgo + " - " + this.primera_publicacion + " - " + this.personajes;
+        return "heroes{" + "id=" + id + ", nombre=" + nombre + ", alterEgo=" + alterEgo + ", primera_publicacion=" + primera_publicacion + ", personajes=" + personajes + ", imagen=" + imagen + '}';
     }
 
-
+    
 }

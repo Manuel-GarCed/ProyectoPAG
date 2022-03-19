@@ -1,6 +1,7 @@
 
 package proyectopag;
 
+import DAO.Conexion;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,25 +11,16 @@ import javafx.stage.Stage;
 
 
 public class FramePrincipal extends Application {
-    
+    public static Conexion Conexion = new Conexion();
+
     @Override
     public void start(Stage primaryStage) throws IOException {
-        
-        Parent root = FXMLLoader.load(getClass().getResource("/interfaz/InterfazInicioSesion.fxml"));
-        //Parent root = FXMLLoader.load(getClass().getResource("/view/ViewLogin.fxml"));
-        
+        Parent root = FXMLLoader.load(getClass().getResource("/interfaz/InterfazInicioSesion.fxml"));        
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
         
-        /*StackPane root = new StackPane();
         
-        
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();*/
     }
 
     /**

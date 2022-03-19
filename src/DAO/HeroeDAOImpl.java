@@ -19,15 +19,16 @@ import java.util.List;
 public class HeroeDAOImpl extends Conexion implements DAOHeroe {
 
     @Override
-    public void registrar(heroes hero) throws Exception {
+    public void guardar(heroes hero) throws Exception {
         try {
             this.conectar();
-            PreparedStatement st = this.conexion.prepareStatement("INSERT INTO heores(id, nombre, alterego, primera_publicacion, personajes) VALUES(?,?,?,?,?)");
+            PreparedStatement st = this.conexion.prepareStatement("INSERT INTO heores(id, nombre, alterego, primera_publicacion, personajes, imagen) VALUES(?,?,?,?,?,?)");
             st.setString(1, hero.getId());
             st.setString(2, hero.getNombre());
             st.setString(3, hero.getAlterEgo());
             st.setString(4, hero.getPrimera_publicacion());
             st.setString(5, hero.getPersonajes());
+            st.setBytes(6, hero.getImagen());
             st.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -41,12 +42,13 @@ public class HeroeDAOImpl extends Conexion implements DAOHeroe {
     public void modificar(heroes hero) throws Exception {
         try {
             this.conectar();
-            PreparedStatement st = this.conexion.prepareStatement("UPDATE heroes set nombre = ?, alterego=?, primera_publicacion=?, personaje= ? where id = ? ");
+            PreparedStatement st = this.conexion.prepareStatement("UPDATE heroes set id = ?, alterego=?, primera_publicacion=?, personaje= ? where nombre = ? ");
             st.setString(1, hero.getId());
             st.setString(2, hero.getNombre());
             st.setString(3, hero.getAlterEgo());
             st.setString(4, hero.getPrimera_publicacion());
             st.setString(5, hero.getPersonajes());
+            st.setBytes(6, hero.getImagen());
             st.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -59,12 +61,13 @@ public class HeroeDAOImpl extends Conexion implements DAOHeroe {
     public void eliminar(heroes hero) throws Exception {
         try {
             this.conectar();
-            PreparedStatement st = this.conexion.prepareStatement("DELETE from heroes where id = ? ");
+            PreparedStatement st = this.conexion.prepareStatement("DELETE from heroes where nombre = ? ");
             st.setString(1, hero.getId());
             st.setString(2, hero.getNombre());
             st.setString(3, hero.getAlterEgo());
             st.setString(4, hero.getPrimera_publicacion());
             st.setString(5, hero.getPersonajes());
+            st.setBytes(6, hero.getImagen());
             st.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -74,13 +77,12 @@ public class HeroeDAOImpl extends Conexion implements DAOHeroe {
     }
 
     @Override
-    public List<heroes> listar() throws Exception {
+    public  ArrayList CargarImagenes() throws Exception {
         
-        List<heroes> lista= null;
+        ArrayList imagenes= new ArrayList();
          try {
             this.conectar();
             PreparedStatement st = this.conexion.prepareStatement("Select * from heroes");
-            lista = new ArrayList<>();
             ResultSet rs = st.executeQuery();
             while (rs.next()){
                 heroes hero = new heroes();
@@ -89,6 +91,8 @@ public class HeroeDAOImpl extends Conexion implements DAOHeroe {
                 hero.setAlterEgo(rs.getString("alterego"));
                 hero.setPrimera_publicacion(rs.getString("primera_publicacion"));
                 hero.setPersonajes(rs.getString("personajes"));
+                hero.setImagen(rs.getBytes("imagen"));
+                imagenes.add(hero);
             }
             rs.close();
             st.close();
@@ -98,6 +102,8 @@ public class HeroeDAOImpl extends Conexion implements DAOHeroe {
             this.cerrar();
       
          }
-        return lista;
+        return imagenes;
     }
+
+  
 }

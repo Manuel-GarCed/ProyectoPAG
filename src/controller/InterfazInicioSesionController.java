@@ -1,9 +1,11 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package controller;
 
+import DAO.Conexion;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,27 +25,30 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import javafx.stage.WindowEvent;
 import javax.swing.JOptionPane;
-import model.UserDAO;
 
 /**
  * FXML Controller class
  *
- * @author I3
+ * @author carlo
  */
 public class InterfazInicioSesionController implements Initializable {
 
- private UserDAO model = new UserDAO();
- 
+    private Conexion cn = new Conexion();
+    
     @FXML
-    private VBox vboxprincipal;
+    private BorderPane borderPLogin;
     @FXML
-    private Label labelinicio;
+    private ImageView imgComic;
+    @FXML
+    private AnchorPane AP;
     @FXML
     private VBox vboxcampos;
     @FXML
@@ -56,6 +61,8 @@ public class InterfazInicioSesionController implements Initializable {
     private PasswordField textcontra;
     @FXML
     private Button btninicio;
+    @FXML
+    private ImageView imgLogin;
 
     /**
      * Initializes the controller class.
@@ -63,94 +70,76 @@ public class InterfazInicioSesionController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }
+    }    
 
-    @FXML
-    private void eventKey(KeyEvent event) {
-        Object evt = event.getSource();
+  @FXML
+    private void eventAction(ActionEvent eventAction) {
+        btninicio.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent eventAction) {
+                try {
+                    Conexion cn = new Conexion();
+                    String u = textuser.getText();
+                    String p = textcontra.getText();
+                    cn.conectar();
 
-        if (evt.equals(textuser)) {
-            if (event.getCharacter().equals(" ")) {
-                event.consume();
-            }
-        } else if (evt.equals(textcontra)) {
-            if (event.getCharacter().equals(" ")) {
-                event.consume();
-            }
-        }
+                    String sql = "SELECT id, usuario FROM \"usuarios\" WHERE usuario = '" + u + "' AND contrasenha = '" + p + "'";
+                    cn.resultado = cn.sentencia.executeQuery(sql);
+                    if (cn.resultado.next()) {
+                        Stage stage = new Stage();
+                        Parent root = FXMLLoader.load(getClass().getResource("/interfaz/PaginaHeroes.fxml"));
+                        Scene scene = new Scene(root);
+                        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                            @Override
+                            public void handle(WindowEvent e) {
+                                Platform.exit();
+                                System.exit(0);
+                            }
 
-    }
-
-    @FXML
-    private void eventAction(ActionEvent event){
-        
-        Object evt = event.getSource();
-
-        if(evt.equals(btninicio)){
-                                
-            if(!textuser.getText().isEmpty() && !textcontra.getText().isEmpty()){
-            
-                String user = textuser.getText();
-                String pass = textcontra.getText();
-                
-                int state = model.login(user, pass);
-                
-                if(state!=-1){
-
-                    if(state == 1){
-
-                        JOptionPane.showMessageDialog(null, "Datos correctos puede ingresar al sistema");
-                        
-                        loadStage("/interfaz/PaginaHeroes.fxml", event);
-
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Error al iniciar sesión datos de acceso incorrectos", 
-                                                            "ADVERTENCIA", JOptionPane.WARNING_MESSAGE);                
+                        });
+                        stage.setScene(scene);
+                        stage.show();
+                        //Ocultar login
+                        ((Node)(eventAction.getSource())).getScene().getWindow().hide();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Usuario o Contraseña incorrectos");
                     }
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage());
 
-                }                
-
-            
-            }else{            
-                    JOptionPane.showMessageDialog(null, "Error al iniciar sesión datos de acceso incorrectos", 
-                                                        "ADVERTENCIA", JOptionPane.WARNING_MESSAGE);                                
+                }
             }
-        
-        }
-    
+        });
     }
-    private void loadStage(String url, Event event){
-            
+
+    private void loadStage(String url, Event event) {
+
         try {
-    
+
             //((Node)(event.getSource())).getScene().getWindow().hide();    
-            
-            
-            Object eventSource = event.getSource(); 
-            Node sourceAsNode = (Node) eventSource ;
+            Object eventSource = event.getSource();
+            Node sourceAsNode = (Node) eventSource;
             Scene oldScene = sourceAsNode.getScene();
             Window window = oldScene.getWindow();
-            Stage stage = (Stage) window ;
+            Stage stage = (Stage) window;
             stage.hide();
-                        
+
             Parent root = FXMLLoader.load(getClass().getResource(url));
-            Scene scene = new Scene(root);              
+            Scene scene = new Scene(root);
             Stage newStage = new Stage();
             newStage.setScene(scene);
-            newStage.show();  
-                                    
+            newStage.show();
+
             newStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
                 @Override
                 public void handle(WindowEvent event) {
                     Platform.exit();
                 }
-            });  
-
+            });
         } catch (IOException ex) {
-            Logger.getLogger(InterfazInicioSesionController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(InterfazInicioSesionController.class.getName()).log(Level.SEVERE,
+                    null, ex);
         }
-                
-    }    
-    
-    
+    }
 }
+

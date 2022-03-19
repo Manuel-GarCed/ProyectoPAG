@@ -6,6 +6,7 @@ package controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -21,14 +22,6 @@ import javafx.scene.control.TextField;
 public class InterfazEditarController implements Initializable {
 
     @FXML
-    private Label lbleditor;
-    @FXML
-    private ComboBox<?> cmbeditor;
-    @FXML
-    private Label lblnombresuperheroe;
-    @FXML
-    private TextField txtnombresuperheroe;
-    @FXML
     private Label lblalterego;
     @FXML
     private TextField txtalterego;
@@ -41,7 +34,15 @@ public class InterfazEditarController implements Initializable {
     @FXML
     private TextField txtpersonajes;
     @FXML
-    private Button btnguardaredicion;
+    private Label lbid;
+    @FXML
+    private ComboBox<?> cmbID;
+    @FXML
+    private Label lbNH;
+    @FXML
+    private TextField txtNH;
+    @FXML
+    private Button btnguardar;
 
     /**
      * Initializes the controller class.
@@ -50,5 +51,9 @@ public class InterfazEditarController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void Guardar(ActionEvent event) {
+    }
     
 }
