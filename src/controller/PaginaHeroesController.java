@@ -119,7 +119,6 @@ public class PaginaHeroesController implements Initializable {
             }
         });
     }
-     @FXML
      private void eventActionBuscar(ActionEvent event) {
         BtnBuscar.setOnAction(new EventHandler<ActionEvent>() {
             @Override
