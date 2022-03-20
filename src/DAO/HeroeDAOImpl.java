@@ -105,5 +105,26 @@ public class HeroeDAOImpl extends Conexion implements DAOHeroe {
         return imagenes;
     }
 
+    @Override
+    public void consultar(heroes hero) throws Exception {
+          try {
+            this.conectar();
+            PreparedStatement st = this.conexion.prepareStatement("SELECT * from heroes WHERE nombre= ?");
+            st.setString(1, hero.getId());
+            st.setString(2, hero.getNombre());
+            st.setString(3, hero.getAlterEgo());
+            st.setString(4, hero.getPrimera_publicacion());
+            st.setString(5, hero.getPersonajes());
+            st.setBytes(6, hero.getImagen());
+            st.executeUpdate();
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            this.cerrar();
+        }
+
+
+    }
+
   
 }

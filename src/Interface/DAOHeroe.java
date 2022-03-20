@@ -20,6 +20,8 @@ public interface DAOHeroe {
     public void modificar(heroes hero) throws Exception;
 
     public void eliminar(heroes hero) throws Exception;
+    
+    public void consultar (heroes hero) throws Exception;
 
     public ArrayList CargarImagenes()throws Exception;
     
