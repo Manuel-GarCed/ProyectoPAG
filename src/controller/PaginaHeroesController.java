@@ -5,25 +5,15 @@
  */
 package controller;
 
-import DAO.Conexion;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -37,7 +27,6 @@ import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -73,12 +62,6 @@ public class PaginaHeroesController implements Initializable {
     @FXML
     private ImageView CapitanAmerica;
     @FXML
-    private ImageView Deadpool;
-    @FXML
-    private ImageView Constantine;
-    @FXML
-    private ImageView ViudaNegra;
-    @FXML
     private ScrollPane ScroballPag;
     @FXML
     private ImageView FLASH;
@@ -86,6 +69,18 @@ public class PaginaHeroesController implements Initializable {
     private ImageView BRUJA_ESCARLATA;
     @FXML
     private Button btneditar;
+    @FXML
+    private ImageView QuickSilver;
+    @FXML
+    private ImageView hulk;
+    @FXML
+    private ImageView Mera;
+    @FXML
+    private ImageView LinternGreen;
+    @FXML
+    private ImageView VIUDA_NEGRA;
+    @FXML
+    private ImageView TORMENTA;
     
 
     @Override

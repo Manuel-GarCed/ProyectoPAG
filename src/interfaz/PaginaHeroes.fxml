@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="533.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PaginaHeroesController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="462.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PaginaHeroesController">
    <children>
       <VBox fx:id="VboxHeroes" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="698.0" snapToPixel="false">
          <children>

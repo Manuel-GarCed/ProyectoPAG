@@ -3,7 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/carlo/Documents/ProyectoPAG/src/controller/GuardarController.java</file>
+            <file>file:/C:/Users/carlo/Documents/ProyectoPAG/src/interfaz/PaginaHeroes.fxml</file>
+            <file>file:/C:/Users/carlo/Documents/ProyectoPAG/src/interfaz/InterfazEditar.fxml</file>
             <file>file:/C:/Users/carlo/Documents/ProyectoPAG/src/Values/Style.css</file>
+            <file>file:/C:/Users/carlo/Documents/ProyectoPAG/src/Interface/DAOHeroe.java</file>
+            <file>file:/C:/Users/carlo/Documents/ProyectoPAG/src/controller/InterfazEditarController.java</file>
+            <file>file:/C:/Users/carlo/Documents/ProyectoPAG/src/DAO/Conexion.java</file>
+            <file>file:/C:/Users/carlo/Documents/ProyectoPAG/src/proyectopag/FramePrincipal.java</file>
+            <file>file:/C:/Users/carlo/Documents/ProyectoPAG/src/controller/InterfazInicioSesionController.java</file>
+            <file>file:/C:/Users/carlo/Documents/ProyectoPAG/src/controller/PaginaHeroesController.java</file>
+            <file>file:/C:/Users/carlo/Documents/ProyectoPAG/src/DAO/HeroeDAOImpl.java</file>
         </group>
     </open-files>
 </project-private>

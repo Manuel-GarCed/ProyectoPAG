@@ -13,6 +13,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
@@ -36,13 +38,21 @@ public class InterfazEditarController implements Initializable {
     @FXML
     private Label lbid;
     @FXML
-    private ComboBox<?> cmbID;
-    @FXML
     private Label lbNH;
     @FXML
     private TextField txtNH;
     @FXML
     private Button btnguardar;
+    @FXML
+    private AnchorPane AnchorP;
+    @FXML
+    private VBox VboxEdit;
+    @FXML
+    private TextField txtNH1;
+    @FXML
+    private Label lblImg;
+    @FXML
+    private Button btnInsert;
 
     /**
      * Initializes the controller class.
