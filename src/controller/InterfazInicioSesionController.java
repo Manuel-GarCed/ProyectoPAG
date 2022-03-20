@@ -116,7 +116,7 @@ public class InterfazInicioSesionController implements Initializable {
 
         try {
 
-            //((Node)(event.getSource())).getScene().getWindow().hide();    
+            ((Node)(event.getSource())).getScene().getWindow().hide();    
             Object eventSource = event.getSource();
             Node sourceAsNode = (Node) eventSource;
             Scene oldScene = sourceAsNode.getScene();
@@ -137,8 +137,7 @@ public class InterfazInicioSesionController implements Initializable {
                 }
             });
         } catch (IOException ex) {
-            Logger.getLogger(InterfazInicioSesionController.class.getName()).log(Level.SEVERE,
-                    null, ex);
+            System.out.println("Error en la conexion");
         }
     }
 }
